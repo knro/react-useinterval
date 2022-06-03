@@ -6,10 +6,7 @@ export default function useInterval(
 	...args: any[]
 ) {
 	const savedCallback = useRef<(...args: any[]) => void>();
-
-	useEffect(() => {
-		savedCallback.current = callback;
-	}, [callback]);
+	savedCallback.current = callback;
 
 	useEffect(() => {
 		function tick() {
